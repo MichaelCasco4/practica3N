@@ -40,17 +40,22 @@ namespace LoginForm
 
             }
 
-            UserService userService = new UserService();
 
+            UserService service = new UserService();
 
-            if (UserService.ValidateUser(user.Username, user.Password))
+            if (service.ValidateUser(user.Username, user.Password))
 
             {
 
                 MetroMessageBox.Show(this, "Bienvenido", "TE AMO EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            
+
+            else
+            {
+                MetroMessageBox.Show(this, "Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+               
          
            
 
